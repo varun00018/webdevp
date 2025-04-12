@@ -1,0 +1,9 @@
+* { font-weight:bold; text-align:center;}
+table { background-color: #87CEEB; padding: 2px 2px 2px 2px; }
+tr,td { background-color: white; border-radius: 7px;}
+td {box-shadow: 0px 5px 2px rgb(64, 64, 64);}
+.id1 { background-color: red;}
+.id2 { background-color: yellow;}
+.id3 { background-color: pink; }
+.id4 { background-color: #7393B3; box-shadow: 1px -2px;}
+td:hover{ background-color: violet; }

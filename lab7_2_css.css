@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://cdn.pixabay.com/photo/2023/02/01/21/40/pink-7761356_640.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rainbow-heading {
+    font-size: 3rem;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+	
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+.description table {
+    width: 100%;
+	
+    table-layout: fixed;
+}
+
+.description td,.description tr {
+    vertical-align: top;
+    padding: 20px;
+    line-height: 30pt;
+    text-align: justify;
+}
+
+
+.ball {
+    position: absolute;
+    left: 49%;
+    bottom: 200px;
+    transform-origin: bottom center; 
+    animation: ball-swing 2s infinite ease-in-out;
+}
+
+@keyframes ball-swing {
+    0% { transform: rotate(-67deg); }
+    50% { transform: rotate(67deg); }
+    100% { transform: rotate(-67deg); }
+}
+
