@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE5067</title>
+</head>
+ 
+<body>
+    <h1>Enter input</h1>
+    <input type="text" id="id1"> <br> <br>
+    <div id="id2">
+ 
+    </div>
+    <script>
+        let t = document.getElementById("id1");
+        let c = 0;
+        let count = document.getElementById("id2");
+        t.addEventListener("keydown", function (e) {
+            if (e.key === "Backspace") {
+                if (c == 0) c = 0;
+                else c--;
+            }
+            count.innerHTML = `Character count: ${c}`;
+        })
+        t.addEventListener("keypress", function () {
+            c++;
+            count.innerHTML = `Character count: ${c}`;
+        });
+ 
+    </script>
+</body>
+ 
+</html>

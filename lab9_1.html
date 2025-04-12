@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE5067</title>
+    <script>
+        
+        function fun()
+        {
+            let str=prompt("Enter the temperature recordings with(,)");
+            const arr=str.split(",");
+            let counthot=0;
+            let countpleasant=0;
+            let countcold=0;
+            document.getElementById("id2").innerHTML=`<th>Temperature recordings</th><th>Weather category</th>`;
+            for(let i=0;i<arr.length;i++)
+            {
+                if(arr[i]>=85){
+                    counthot++;
+                    document.getElementById("id2").innerHTML+=`<tr><td>${arr[i]}</td><td>Hot day</td></tr>`;
+                }
+                    
+                else if(arr[i]<85 && arr[i]>60){
+                    countpleasant++;
+                    document.getElementById("id2").innerHTML+=`<tr><td>${arr[i]}</td><td>Pleasant day</td></tr>`;
+                }
+                else if(arr[i]<=60)
+                {
+                    countcold++;
+                    document.getElementById("id2").innerHTML+=`<tr><td>${arr[i]}</td><td>Cold day</td></tr>`;
+                }
+            }
+            document.getElementById("id1").innerHTML=`
+        <caption><b>Summary</b></caption>
+        <tr>
+            <th>Weather category</th>
+            <th>No. of days</th>
+        </tr>
+        <tr>
+            <td>Hot days</td>
+            <td>${counthot}</td>
+        </tr>
+        <tr>
+            <td>Pleasant days</td>
+            <td>${countpleasant}</td>
+        </tr>
+        <tr>
+            <td>Cold days</td>
+            <td>${countcold}</td>
+        </tr>`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Temperature recordings of NEWYORK city</h1><br>
+    <button onclick="fun()">Enter Temperature recordings</button>
+    <br>
+    <br>
+    <table id="id2" border="1" cellspacing="0" cellpadding="3">
+            
+    </table>
+    <br>
+    <table id="id1" border="1" cellspacing="0" cellpadding="3">
+
+    </table>
+    
+</body>
+</html>
