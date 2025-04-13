@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE5067</title>
+    
+ 
+</head>
+ 
+<body>
+ 
+</body>
+<script>
+    let table = document.createElement("table");
+    
+    let r = parseInt(prompt("Enter rows : "));
+    let c = parseInt(prompt("Enter columns : "));
+    for (let i = 0; i < r; i++) {
+        let row = table.insertRow();
+        for (let j = 0; j < c; j++) {
+            let cell = row.insertCell(j);
+            let t = prompt("Enter value of cell: ");
+            cell.textContent = t;
+        }
+    }
+    table.border = 1;
+    table.cellSpacing=0;
+    
+    
+    document.body.appendChild(table);
+    document.body.appendChild(document.createElement("br"));
+ 
+ 
+    let button = document.createElement("button");
+    button.style.background = "red";
+    button.textContent = "Button";
+    button.addEventListener("mouseover", function () {
+        button.style.background = "green";
+    });
+    button.addEventListener("mouseout", function () {
+        button.style.background = "red";
+    });
+    document.body.appendChild(button);
+    document.body.appendChild(document.createElement("br"));
+    document.body.appendChild(document.createElement("br"));
+ 
+ 
+ 
+    let t = document.createElement("input");
+    t.setAttribute("type","text");
+    t.style.background = "green";
+
+    
+ 
+    t.addEventListener("focus", function () {
+
+        t.style.background = "yellow";
+
+    });
+    t.addEventListener("change",function(){
+        let p=document.createElement("p");
+        p.textContent="Hello!";
+        document.body.appendChild(p);
+    });
+    t.addEventListener("blur", function () {
+        t.style.background = "green";
+    });
+ 
+    document.body.appendChild(t);
+    document.body.appendChild(document.createElement("br"));
+ 
+    button.addEventListener("dblclick", function () {
+        let li = document.createElement("li");
+        li.textContent = t.value;
+        document.body.appendChild(li);
+    });
+    
+    document.body.appendChild(document.createElement("br"));
+    let count=document.createElement("input");
+    let co=0;
+    t.addEventListener("keypress",function(){
+        co++;
+        count.value=co;
+        document.body.appendChild(count);
+    });
+
+</script>
+ 
+</html>

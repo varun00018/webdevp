@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE5067</title>
+</head>
+<body>
+    <h1 style="text-align:center;">Welcome to Feedback Page</h1>
+    <form oninput="x.value=(parseFloat(a.value)+parseFloat(b.value)+parseFloat(c.value))/3; i.value=parseInt(a.value); j.value=parseInt(b.value); k.value=parseInt(c.value);">
+    <fieldset>
+    <legend>Please provide your feedback (All out of 5 stars):</legend>
+    <p>
+    <label for="a">How would you rate our customer service?</label><br>
+    0<input type="range" id="a" min="0" max="5" value="0">5 (<output id="i"></output>/5)
+    </p>
+    <p>
+    <label for="b">How satisfied are you with the quality of our product?</label><br>
+    0<input type="range" id="b" min="0" max="5" value="0">5 (<output id="j"></output>/5)
+    </p>
+    <p>
+    <label for="c">How likely are you to recommend us to others?</label><br>
+    0<input type="range" id="c" min="0" max="5" value="0">5 (<output id="k"></output>/5)
+    </p>
+    </fieldset>
+    <fieldset>
+    <legend>Final Feedback</legend>
+    <p>
+    Your average feedback score is: <b><output id="x"></output></b> out of <b>5</b> stars.
+    </p>
+    </fieldset>
+    <br>
+    <input type="submit" value="SUBMIT">
+    </form>
+    <h2 style="text-align:center;">Thank you for your feedback!</h2>
+    </body>
+</html>

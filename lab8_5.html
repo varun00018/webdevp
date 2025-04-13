@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE5067</title>
+    <script>
+        function fun1()
+        {
+            let reg=document.getElementById("id1").value;
+            document.write(`<div style="margin:auto; border: solid 5px red; background-color: lightgrey; align-items: center; width:25%; height:50px; text-align: center;">${reg}</div>`);
+            
+        }
+        function fun2()
+        {
+            let name=document.getElementById("id2").value;
+            document.getElementById("id3").innerHTML=`<div style="margin:auto; border: solid 1px black; align-items: center; color: red; width: 25%; height: 50px; text-align: center;">${name}</div>`;
+        }
+    </script>
+
+</head>
+<body>
+    <form name="f1">
+        <label>Enter Reg. no. :</label>
+        <input type="text" id="id1"><br><br>
+        <label>Enter name     :</label>
+        <input type="text" id="id2"><br><br>
+        <label>Get reg.no.</label>
+        <input type="button" onclick="fun1()"><br><br>
+        <label>Get name</label>
+        <input type="button" onclick="fun2()"><br><br>
+        <p id="id3" >
+            
+        </p>
+    </form>
+
+    
+    
+</body>
+</html>

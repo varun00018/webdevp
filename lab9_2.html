@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE5067</title>
+    <script>
+        let first = [0, 0, 0, 0, 0];
+        let second = [0, 0, 0, 0, 0];
+        
+        function book() {
+            document.getElementById("ticket").textContent= ""; 
+            let name = prompt("Enter your name: ");
+            let cl;
+            
+            while (true) {
+                cl = parseInt(prompt("Enter the seat class you want (1-First Class, 2-Economy)"));
+                if (cl === 1 || cl === 2) {
+                    break;
+                } else {
+                    alert("Invalid class! Please enter 1 for First Class or 2 for Economy.");
+                }
+            }
+            
+            let booked = false;
+            
+            if (cl === 1) {
+                for (let i = 0; i < 5; i++) {
+                    if (first[i] === 0) {
+                        let seatno = i + 1;
+                        let confirmBooking = confirm("Do you want to book the first-class seat with seat no. " + seatno + " ?");
+                        if (confirmBooking) {
+                            first[i] = 1;
+                            alert("Successfully booked ticket!");
+                            alert("E-Ticket:\nName: "+name+"\nSection: First-Class\nSeat no.: "+seatno);
+                            booked = true;
+                            return;
+                        }
+                    }
+                }
+                alert("First-class tickets are full.");
+                let tryEconomy = confirm("Do you want to book a ticket in Economy Class?");
+                if (!tryEconomy) {
+                    alert("Sorry for your inconvenience!");
+                    return;
+                }
+                cl = 2; 
+            }
+            
+            if (cl === 2) {
+                for (let i = 0; i < 5; i++) {
+                    if (second[i] === 0) {
+                        let seatno = 5 + i + 1;
+                        let confirmBooking = confirm("Do you want to book the economy-class seat with seat no. " + seatno + " ?");
+                        if (confirmBooking) {
+                            second[i] = 1;
+                            alert("Successfully booked ticket!");
+                            alert("E-Ticket:\nName: "+name+"\nSection: Second-Class\nSeat no.: "+seatno);
+                            booked = true;
+                            return;
+                        }
+                    }
+                }
+                alert("Economy-class tickets are full. Sorry for your inconvenience!");
+            }
+        }
+    </script>
+</head>
+ 
+<body>
+    <h1>Varun Airlines</h1>
+    <h2>Welcome to the Ticket Booking page</h2>
+    <br>
+    <button onclick="book()">Book Ticket</button>
+    <p id="ticket"></p>
+</body>
+ 
+</html>

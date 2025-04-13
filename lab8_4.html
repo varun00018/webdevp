@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE5067</title>
+    <script> 
+
+        let h = 0; 
+
+        let m = 0; 
+
+        let r = 45; 
+
+        function rph() { 
+
+            h = parseInt(prompt("Enter no. of hours: ", "8")); 
+
+        } 
+
+        function mat() { 
+
+            m = parseInt(prompt("Enter cost of materials: ", "45")); 
+
+        } 
+
+        function cal() { 
+
+            let t = (h * r) + m; 
+
+            alert("Total charges : Rs." + t); 
+
+        } 
+
+    </script> 
+</head>
+
+<body> 
+
+    <h1>General Service Company Accounts</h1> 
+
+    <table cellspacing="10">
+        <tr>
+            <td>
+                Rate per hour
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                Rs.45/-
+            </td>
+        </tr>
+        <tr>
+            <td>
+                No. of hours
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <button onclick="rph()">Enter no. of hour</button>
+            </td>
+        </tr>
+        <tr>
+            <td>    
+                Cost of materials
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <button onclick="mat()">Enter cost of materials</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total charge
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <button onclick="cal()">Calculate</button>
+            </td>
+        </tr>
+    </table>
+
+</body> 
+</html>

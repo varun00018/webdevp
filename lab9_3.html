@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE5067</title>
+    <style>
+        .c1{
+            text-align: center;
+        }
+        .highlight {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function cal()
+        {
+            let g=document.querySelector('#select1').value;
+            let w=parseFloat(document.getElementById("id1").value);
+            let h1=parseFloat(document.getElementById("id2").value);
+            let h2=parseFloat(document.getElementById("id3").value);
+            h1 = h1 + (h2 / 12);
+            let bmi=(7.03*w/Math.pow(h1,2));
+            document.getElementById("id4").value=bmi;
+            let rangeId = "";
+            
+            if (g === "Female") {
+                if (bmi <= 17.50) {
+                    alert("Anorexia");
+                    rangeId = "r1";
+                } else if (bmi >= 17.51 && bmi <= 19.10) {
+                    alert("Underweight");
+                    rangeId = "r2";
+                } else if (bmi >= 19.11 && bmi <= 25.80) {
+                    alert("Ideal range");
+                    rangeId = "r3";
+                } else if (bmi >= 25.81 && bmi <= 27.30) {
+                    alert("Marginally overweight range");
+                    rangeId = "r4";
+                } else if (bmi >= 27.31 && bmi <= 32.30) {
+                    alert("Overweight range");
+                    rangeId = "r5";
+                } else {
+                    alert("Very overweight or Obese range");
+                    rangeId = "r6";
+                }
+            } else { 
+                if (bmi <= 17.50) {
+                    alert("Anorexia");
+                    rangeId = "r1";
+                } else if (bmi >= 17.501 && bmi <= 20.70) {
+                    alert("Underweight");
+                    rangeId = "r2";
+                } else if (bmi >= 20.71 && bmi <= 26.40) {
+                    alert("Ideal range");
+                    rangeId = "r3";
+                } else if (bmi >= 26.41 && bmi <= 27.80) {
+                    alert("Marginally overweight range");
+                    rangeId = "r4";
+                } else if (bmi >= 27.81 && bmi <= 31.10) {
+                    alert("Overweight range");
+                    rangeId = "r5";
+                } else {
+                    alert("Very overweight or Obese range");
+                    rangeId = "r6";
+                }
+            }
+    
+            if (rangeId) {
+                document.getElementById(rangeId).classList.add("highlight");
+            }
+        }
+    </script>
+</head>
+<body>
+    <table border="1" cellspacing="2" cellpadding="3">
+        <tr><td colspan="2"><b>BMI Calculator</b> 
+        <select id="select1">
+            <option value="Male" selected>Male</option>
+            <option value="Female">Female</option>
+        </select></td>
+        </tr>
+        <tr><td colspan="2">
+            <label><b>Enter Your Weight:</b><br>(in pounds)</label>
+            <input type="text" id="id1">
+        </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <label><b>Enter Your Height:</b><br>(feet)</label>
+                <input type="text" id="id2"><br><br>
+                <label>(inches)</label>
+                <input type="text" id="id3">
+                
+            </td>
+        </tr>
+        <tr align="center">
+            <td colspan="2">
+            <button onclick="cal()">Calculate</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Your<br> BMI</b>
+            </td>
+            <td>
+                <input id="id4">pd/ft<sup>2</sup>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <table  border="1" cellspacing="2" cellpadding="3">
+        <tr>
+            <th>Adults</th>
+            <th>Women</th>
+            <th>Men</th>
+
+        </tr>
+        <tr id="r1">
+            <td>Anorexia</td>
+            <td colspan="2" class="c1">Less than 17.50</td>
+        </tr>
+        <tr id="r2">
+            <td>Underweight</td>
+            <td class="c1">17.51-19.10</td>
+            <td class="c1">17.501-20.70</td>
+        </tr>
+        <tr id="r3">
+            <td>Ideal range</td>
+            <td class="c1">19.11-25.80</td>
+            <td class="c1">20.71-26.40</td>
+
+        </tr>
+        <tr id="r4">
+            <td>Marginally overweight range</td>
+            <td class="c1">25.81-27.30</td>
+            <td class="c1">26.41-27.80</td>
+        </tr>
+        <tr id="r5">
+            <td>Overweight range</td>
+            <td class="c1">27.31-32.30</td>
+            <td class="c1">27.81-31.10</td>
+        </tr>
+        <tr id="r6">
+            <td>Very overweight or Obese <br>range</td>
+            <td class="c1">More than <br>32.30</td>
+            <td class="c1">More than <br>31.10</td>
+        </tr>
+    </table>
+</body>
+</html>

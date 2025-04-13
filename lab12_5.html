@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 26px;
+            font-weight: bold;
+        }
+        #id1{
+            height:30%;
+            width:30%;
+            position:absolute;
+            left:10px;
+            top:10px;
+            z-index: -2;
+            background-color: green;
+        }
+        #id2{
+            height:30%;
+            width: 30%;
+            position: absolute;
+            left: 40px;
+            top: 40px;
+            z-index: -1;
+            background-color: blue;
+
+        }
+        #id3{
+            height: 30%;
+            width: 30%;
+            position: absolute;
+            left: 70px;
+            top: 70px;
+            z-index: 0;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="id1"></div>
+    <div id="id2"></div>
+    <div id="id3"></div>
+    <script>
+        let x1=document.getElementById("id1");
+        let x2=document.getElementById("id2");
+        let x3=document.getElementById("id3");
+        
+        function display(){
+            x1.textContent=window.getComputedStyle(x1).zIndex;
+            x2.textContent=window.getComputedStyle(x2).zIndex;
+            x3.textContent=window.getComputedStyle(x3).zIndex;
+        }   
+
+        function dis(a,b,c){
+            x1.textContent=a;
+            x2.textContent=b;
+            x3.textContent=c;
+        }
+        
+
+        x1.addEventListener("mouseover",function(){
+            x1.style.zIndex=10;
+            x2.style.zIndex=-1;
+            x3.style.zIndex=-1;
+            dis(10,-1,-1);
+        });
+        x2.addEventListener("mouseover",function(){
+            x1.style.zIndex=-1;
+            x2.style.zIndex=10;
+            x3.style.zIndex=-1;
+            dis(-1,10,-1);
+        });
+        x3.addEventListener("mouseover",function(){
+            x1.style.zIndex=-1;
+            x2.style.zIndex=-1;
+            x3.style.zIndex=10;
+            dis(-1,-1,10);
+        });
+
+
+        
+    </script>
+</body>
+</html>

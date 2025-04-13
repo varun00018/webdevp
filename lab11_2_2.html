@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE5067</title>
+    <style>
+        #age {
+            background-color: black;
+            width: 200px;
+            height: 20px;
+            color: white;
+            text-align: center;
+        }
+ 
+        #dob {
+            width: 194px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <h1>Enter your date of birth</h1>
+    <input type="text" placeholder="dd/mm/yyyy" id="dob"> <br> <br>
+    <div id="age">
+ 
+    </div>
+    <script>
+        let text = ``;
+ 
+        let testbox = document.getElementById("age");
+        testbox.addEventListener("mouseover", function () {
+            let y = document.getElementById("dob").value.split("/");
+            let year = parseInt(y[2]);
+            let a = 2025 - year;
+            text = `Age is : ${a}`;
+            document.getElementById("age").innerHTML = text;
+        });
+ 
+    </script>
+</body>
+ 
+</html>

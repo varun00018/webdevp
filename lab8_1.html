@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE5067</title>
+    <script> 
+
+        let n1 = 0; 
+
+        let n2 = 0; 
+
+        function num1() { 
+
+            n1 = parseInt(prompt("Enter number 1")); 
+
+        } 
+
+        function num2() { 
+
+            n2 = parseInt(prompt("Enter number 2")); 
+
+        } 
+
+        function add() { 
+
+            let a = n1 + n2; 
+
+            alert("Addition of " + n1 + " and " + n2 + " = " + a); 
+
+        } 
+
+        function sub() { 
+
+            let s = n1 - n2; 
+
+            alert("Subtraction of " + n1 + " and " + n2 + " = " + s); 
+
+        } 
+
+        function mul() { 
+
+            let m = n1 * n2; 
+
+            alert("Multiplication of " + n1 + " and " + n2 + " = " + m); 
+
+        } 
+
+        function div() { 
+
+            let d = n1 / n2; 
+
+            alert("Division of " + n1 + " and " + n2 + " = " + d); 
+
+        } 
+
+        function mod(){
+            
+            let n = n1%n2;
+
+            alert("Modulus of "+n1+" and "+n2+" = "+n);
+
+        }
+    </script> 
+
+</head> 
+
+<body> 
+
+    <h1>Calculator</h1> 
+
+    <button onclick="num1()">Enter number 1</button> 
+
+    <button onclick="num2()">Enter number 2</button> 
+
+    <br> 
+
+    <br> 
+
+    <button onclick="add()">Addition</button> 
+
+    <button onclick="sub()">Subtraction</button> 
+
+    <button onclick="mul()">Multiplication</button> 
+
+    <button onclick="div()">Division</button> 
+
+    <button onclick="mod()">Mod</button>
+
+ 
+
+    
+</body> 
+
+</html>

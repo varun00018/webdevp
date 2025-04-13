@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE5067</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        font-size: 40px;
+    }
+    button{
+        font-size: 30px;
+        padding: 10px;
+        border: 1px solid rgb(209, 16, 16);
+        border-radius: 10px;
+        background-color: green;
+    }
+    #reset{
+        background-color: blue;
+    }
+   
+</style>
+<body>
+    <h2>StopWatch</h2>
+    <div class="content" id="time">
+        00:00:00
+    </div> <br>
+    <button class="content" id="start">Start</button> &nbsp;
+ 
+    <button class="content" id="reset">Reset</button> &nbsp;
+</body>
+<script>
+    let sec=0;
+    let min=0;
+    let h=0;
+    let running=false;
+    let interval;
+    let time=document.getElementById("time");
+    let startbutton=document.getElementById("start");
+    let resetbutton=document.getElementById("reset");
+    function format(num){
+        if(num<10)
+            return `0${num}`;
+        else
+            return `${num}`;
+    }
+   
+    function display(){
+        time.textContent=`${format(h)}:${format(min)}:${format(sec)}`;
+ 
+    }
+   
+ 
+    function updatetimer(){
+        if(sec<60){
+            sec++;
+        }
+        else{
+            sec=format(0);
+            if(min<60){
+                min++;
+            }
+            else{
+                min=format(0);
+                h++;
+            }
+        }
+        display();
+       
+    }
+ 
+ 
+    startbutton.addEventListener("click", function(){
+ 
+        if(!running){
+            startbutton.textContent=`Stop`;
+            interval=setInterval(updatetimer,1000);
+ 
+        }
+        else{
+            clearInterval(interval);
+            startbutton.textContent=`Start`;
+        }
+        running=!running;
+       
+    });
+ 
+    resetbutton.addEventListener("click", function(){
+        sec=0;
+        min=0;
+        h=0;
+        display();
+        startbutton.textContent=`Start`;
+        running=false;
+        clearInterval(interval);
+    });
+ 
+    startbutton.addEventListener("mouseover",function(){
+        startbutton.style.background="red";
+    });
+    resetbutton.addEventListener("mouseover",function(){
+        resetbutton.style.background="yellow";
+    });
+    startbutton.addEventListener("mouseout",function(){
+        startbutton.style.background="green";
+    });
+    resetbutton.addEventListener("mouseout",function(){
+        resetbutton.style.background="blue";
+    });
+ 
+</script>
+</html>
