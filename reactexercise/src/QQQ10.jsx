@@ -10,7 +10,7 @@ function Child(props){
     
     ) 
     
-    } 
+} 
     
     export default function QQQ10(){ 
     
